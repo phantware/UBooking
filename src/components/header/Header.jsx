@@ -182,9 +182,10 @@ const Header = ({ type }) => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className='headerSearchItem'>
-              <button className='headerBtn'>Search</button>
+
+              <div className='headerSearchItem'>
+                <button className='headerBtn'>Search</button>
+              </div>
             </div>
           </>
         )}
