@@ -16,7 +16,7 @@ import { format } from 'date-fns'
 import { useNavigate } from 'react-router-dom'
 
 const Header = ({ type }) => {
-  const [openDate, setOpenDate] = useState('false')
+  const [openDate, setOpenDate] = useState(false)
   const [destination, setDestination] = useState('')
 
   const [openOptions, setOpenOptions] = useState(false)
