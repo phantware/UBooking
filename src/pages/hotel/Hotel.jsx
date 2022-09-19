@@ -1,4 +1,4 @@
-import React from 'react'
+import './hotel.css'
 import Header from '../../components/header/Header'
 import Navbar from '../../components/navbar/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
