@@ -1,6 +1,10 @@
 import './featuredProperties.css'
+import useFetch from '../../hooks/useFetch'
 
 const FeaturedProperties = () => {
+  const { data, loading, error } = useFetch(
+    '/hotels/countByCity?city=Egbeda,Madrid,Lagos'
+  )
   return (
     <div className='fp'>
       <div className='fpItem'>
