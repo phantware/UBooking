@@ -10,7 +10,7 @@ const Login = () => {
     password: undefined,
   })
 
-  const { user, loading, error, dispatch } = useContext(AuthContext)
+  const { loading, error, dispatch } = useContext(AuthContext)
   const navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -28,8 +28,6 @@ const Login = () => {
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
     }
   }
-
-  console.log('user', user)
 
   return (
     <div className='login'>
