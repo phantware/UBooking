@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import axiosInstance from '../../utils/axiosInstance'
 import './login.css'
@@ -11,8 +11,7 @@ const Login = () => {
   })
 
   const { user, loading, error, dispatch } = useContext(AuthContext)
-
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }))
@@ -24,7 +23,7 @@ const Login = () => {
     try {
       const res = await axiosInstance.post('/auth/login', credentials)
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
-      // navigate('/')
+      navigate('/')
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
     }
