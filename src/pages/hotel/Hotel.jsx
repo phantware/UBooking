@@ -8,11 +8,12 @@ import {
   faCircleXmark,
   faLocationDot,
 } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import MailList from '../../components/mailList/MailList'
 import Footer from '../../components/footer/Footer'
 import useFetch from '../../hooks/useFetch'
 import { useLocation } from 'react-router-dom'
+import { SearchContext } from '../../context/SearchContext'
 
 const Hotel = () => {
   const location = useLocation()
@@ -57,6 +58,10 @@ const Hotel = () => {
   }
 
   const { data, loading, reFetch } = useFetch(`/hotels/find/${id}`)
+  const { dates } = useContext(SearchContext)
+
+  console.log('dates', dates)
+
   return (
     <div>
       <Navbar />
