@@ -1,4 +1,5 @@
 import useFetch from '../../hooks/useFetch'
+import Loadings from '../loadings/Loadings'
 import './propertyList.css'
 
 const PropertyList = () => {
@@ -14,7 +15,7 @@ const PropertyList = () => {
   return (
     <div className='pList'>
       {loading ? (
-        'loading'
+        <Loadings />
       ) : (
         <>
           {data &&

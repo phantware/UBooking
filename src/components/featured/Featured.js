@@ -1,5 +1,6 @@
 import './featured.css'
 import useFetch from '../../hooks/useFetch'
+import Loadings from '../loadings/Loadings'
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
@@ -8,7 +9,7 @@ const Featured = () => {
   return (
     <div className='featured'>
       {loading ? (
-        'Loading please wait....'
+        <Loadings />
       ) : (
         <>
           <div className='featuredItem'>

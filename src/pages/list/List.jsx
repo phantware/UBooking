@@ -7,6 +7,7 @@ import { format } from 'date-fns'
 import { DateRange } from 'react-date-range'
 import SearchItem from '../../components/searchItem/SearchItem'
 import useFetch from '../../hooks/useFetch'
+import Loadings from '../../components/loadings/Loadings'
 const List = () => {
   const location = useLocation()
   const [destination, setDestination] = useState(location.state.destination)
@@ -104,7 +105,7 @@ const List = () => {
           </div>
           <div className='listResult'>
             {loading ? (
-              'Loading, please wait'
+              <Loadings />
             ) : (
               <>
                 {data.map((item) => (

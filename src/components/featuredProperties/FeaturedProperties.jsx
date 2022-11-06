@@ -1,5 +1,6 @@
 import './featuredProperties.css'
 import useFetch from '../../hooks/useFetch'
+import Loadings from '../loadings/Loadings'
 
 const FeaturedProperties = () => {
   const { data, loading } = useFetch('/hotels?featured=true&limit=4')
@@ -8,7 +9,7 @@ const FeaturedProperties = () => {
   return (
     <div className='fp'>
       {loading ? (
-        'Loading please wait'
+        <Loadings />
       ) : (
         <>
           {data.map((item) => (
